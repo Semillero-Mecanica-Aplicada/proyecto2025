@@ -120,6 +120,8 @@ for epoch in range(epochs):
     avg_loss = running_loss / len(train_loader)
     loss_history.append(avg_loss)
 
+    print(f"Epoch [{epoch+1}/{epochs}] - Loss: {avg_loss:.6f}")
+
 torch.save(model.state_dict(), "modelo_final_CNN2.pth")
 
 
