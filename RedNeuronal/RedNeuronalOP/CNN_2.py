@@ -32,7 +32,7 @@ class QRDatasetNPZ(Dataset):
         return x, y
 
 # --- Uso ---
-dataset = QRDatasetNPZ('././Generacion de imagenes/images0_125.npz', '././Resultados/Resultados0_50.npz')
+dataset = QRDatasetNPZ('images0_125.npz', 'Resultados0_50.npz')
 
 # Normalizar coeficientes
 dataset.Y = dataset.Y/(12e9)
@@ -145,3 +145,5 @@ np.savez(
     loss=loss_history,
     test_error=test_loss / len(test_loader)
 )
+
+print(f"Test Loss: {test_loss / len(test_loader):.6f}")

@@ -32,7 +32,7 @@ class QRDatasetNPZ(Dataset):
         return x, y
 
 # --- Uso ---
-dataset = QRDatasetNPZ('././Generacion de imagenes/images0_125.npz', '././Resultados/Resultados0_50.npz')
+dataset = QRDatasetNPZ('images0_125.npz', 'Resultados0_50.npz')
 
 # Normalizar coeficientes
 dataset.Y = dataset.Y/(12e9)
@@ -85,6 +85,7 @@ torch.manual_seed(2) # A random number
 
 
 # Training the Model
+print("CUDA disponible:", torch.cuda.is_available())
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = CNN()
 model = model.to(device)
