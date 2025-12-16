@@ -157,11 +157,11 @@ def periodicBC_transform_mat(def_const, ndofs, nodes_ref, nodes_ima,
 
             # --- CASE 1: Tensión en X ---
             if mode == "tension_x" and np.isclose(x, x_max):
-                g_vec[ux] += disp_value
+                g_vec[ux] = disp_value
 
             # --- CASE 2: Tensión en Y ---
             elif mode == "tension_y" and np.isclose(y, y_max):
-                g_vec[uy] += disp_value
+                g_vec[uy] = disp_value
 
             # --- CASE 3: Corte puro (shear) ---
             elif mode == "shear":
